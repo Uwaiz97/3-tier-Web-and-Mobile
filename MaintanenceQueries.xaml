@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Student.MaintanenceQueries">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="Maintainance Queiry" FontSize="40" FontAttributes="Bold" VerticalOptions="Center"/>
+            <!-- Add more controls here if needed -->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Padding="40" HorizontalOptions="CenterAndExpand">
+            <Grid Padding="100, 50" HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Picker Grid.Column="1" Grid.Row="0" BackgroundColor="#EEE" Title="Query type" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>WiFi</x:String>
+                            <x:String>Bathroom</x:String>
+                            <x:String>Electricity related</x:String>
+                            <x:String>Building (Window, Door, Floor, Water, etc)</x:String>
+                            <x:String>Housemate</x:String>
+                            <x:String>Transport</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>
+            <Editor Placeholder="Query description" HeightRequest="100" />
+            <Button Text="Submit Query" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Administrator.RegisterEmployee">
+    <ContentPage.Content>
+        <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="Center">
+            <!-- x:Name backend name -->
+            <Label Text="Register" FontSize="30"></Label>
+
+            <!-- First Names -->
+            <Entry x:Name="txtName"
+                   WidthRequest="500"
+                   Placeholder="First Name(s)"
+                   TextColor="Black"
+                   PlaceholderColor="Gray">
+            </Entry>
+
+            <!--Last Name-->
+            <Entry x:Name="txtSurname"
+                   Placeholder="Last Name"
+                   TextColor="Black"
+                   PlaceholderColor="Gray">
+            </Entry>
+
+            <!--Email Address-->
+            <Entry x:Name="txtEmail"
+                   Keyboard="Email"
+                   Placeholder="email"
+                   TextColor="Black"
+                   PlaceholderColor="Gray">
+            </Entry>
+
+            <!--Phone Number-->
+            <Entry x:Name="txtPhone"
+                   Placeholder="Phone Number"
+                   Keyboard="Telephone"
+                   TextColor="Black"
+                   PlaceholderColor="Gray">
+            </Entry>
+
+            <!--Passowrd-->
+            <Entry x:Name="txtPassword"
+                   Placeholder="Password"
+                   IsPassword="true"
+                   TextColor="Black"
+                   PlaceholderColor="Gray">
+            </Entry>
+
+            <!--Confirm Passowrd-->
+            <Entry x:Name="txtConfirm"
+                   Placeholder="Confirm Password"
+                   IsPassword="true"
+                   TextColor="Black"
+                   PlaceholderColor="Gray">
+            </Entry>
+
+            <!--User Type-->
+            <Label Text="User Type"/>
+            <RadioButton CheckedChanged="UserType"
+                         Content="administrator"
+                         IsChecked="True"/>
+
+            <RadioButton CheckedChanged="UserType"
+                         Content="inspector1"/>
+            <RadioButton CheckedChanged="UserType"
+                         Content="inspector2"/>
+            <RadioButton CheckedChanged="UserType"
+                         Content="inspector3"/>
+            <!--Submit button-->
+            <Button x:Name="btnRegisterEmployee"
+                    VerticalOptions="Center"
+                    Text="Register Employee"
+                    TextColor="Gray"
+                    TextTransform="Uppercase"
+                    FontAttributes="Bold"
+                    FontSize="17"
+                    BackgroundColor="Transparent"
+                    BorderWidth="1.5"
+                    BorderColor="Gray"
+                    CornerRadius="50"
+                    Clicked="btnRegisterEmployee_Clicked">
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Inspector.AboutProperty">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="About Property" FontAttributes="Bold" VerticalOptions="Center"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  Padding="40">
+                <StackLayout Orientation="Horizontal">
+            <Label Text="Accr. Code:"/>
+            <Label FontAttributes="Bold" Text="{Binding prop_id}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Property Name:"/>
+                    <Label FontAttributes="Bold" Text="{Binding prop_name}" />
+                </StackLayout >
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Property Address:"/>
+                    <Label  FontAttributes="Bold" Text="{Binding prop_address}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Number of Beds:"/>
+                    <Label FontAttributes="Bold" Text="{Binding prop_numBeds}" />
+                </StackLayout>
+
+                <StackLayout Padding="60">
+                    <Button x:Name="btnAccepted" IsVisible="False" Text="Inspect" Clicked="Inspect" WidthRequest="500" HeightRequest="50" HorizontalOptions="CenterAndExpand"></Button>
+                </StackLayout>
+                
+                <StackLayout Padding="60">
+                    <Button x:Name="btnChooseInspection" IsVisible="False" Text="Accept Inpection" Clicked="AcceptpInspection" WidthRequest="600" HeightRequest="50" HorizontalOptions="CenterAndExpand"></Button>
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Inspector.InspHomePage">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout>
+
+                <Button Text="Home"
+                        Clicked="OnHomeClicked"/>
+                <Button Text="Choose Inspection"
+                        Clicked="OnChooseInspectionClicked"/>
+                <Button Text="Inspect"
+                        Clicked="OnInspectClicked"/>
+                <Button x:Name="logout" Text="Log Out"
+                        Clicked="OnLogoutClicked"
+                        IsEnabled="True"/>
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage Title="Home " />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

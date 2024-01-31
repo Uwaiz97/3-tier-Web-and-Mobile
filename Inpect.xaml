@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Inspector.Inpect">
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+            <Label Text="Bedroom Inspection" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"/>
+            <!-- Add more controls here if needed -->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ScrollView  Orientation="Vertical">
+        <StackLayout Padding="40">
+            <Label Text="Bed Room"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="25"/>
+
+            <Label Text="" x:Name="roomNumber"  HorizontalOptions="CenterAndExpand"  FontSize="25"/>
+            <!--Main grid or outer grid-->
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <!-- Outer Grid -->
+                <Label Grid.Row="0" FontSize="25" FontAttributes="Bold" Grid.Column="0" Text="" BackgroundColor="#EEE"/>
+                <Label Grid.Row="0" FontSize="25" FontAttributes="Bold" Grid.Column="1" Text="" BackgroundColor="#EEE"/>
+                <Label Grid.Row="0" FontSize="25" FontAttributes="Bold" Grid.Column="2" Text="Condition" BackgroundColor="#EEE"/>
+                <Label Grid.Row="1" FontSize="25" FontAttributes="Bold" Grid.Column="0" Text="Features" BackgroundColor="#EEE"/>
+                <Label Grid.Row="1" FontSize="25" FontAttributes="Bold" Grid.Column="1" Text="Available?" BackgroundColor="#EEE"/>
+
+                <!-- Condition Grid -->
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" FontSize="20" FontAttributes="Bold" Text="Good" BackgroundColor="#EEE"/>
+                    <Label Grid.Column="1" FontSize="20" FontAttributes="Bold" Text="Usable" BackgroundColor="#EEE"/>
+                    <Label Grid.Column="2" FontSize="20" FontAttributes="Bold" Text="Unusable" BackgroundColor="#EEE"/>
+                </Grid>
+
+                <!-- Outer Grid continued -->
+               
+ <!-- ==================================================Start Bed===================================================================-->
+
+                <!-- Availability Grid (Bed)-->
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                        <CheckBox IsChecked="false" x:Name="bedYes" CheckedChanged="bedYes_CheckedChanged"/> <!-- Bed (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                        <CheckBox IsChecked="false" x:Name="bedNo" CheckedChanged="bedNo_CheckedChanged"/>
+                        <!-- Bed (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- Bed Condition-->
+                <Grid Grid.Row="2" Grid.Column="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="bedGood"  CheckedChanged="bedGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/> <!-- Bed Best-->
+                    <CheckBox Grid.Column="1" x:Name="bedUsable"  CheckedChanged="bedUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/> <!--  Bed Usable-->
+                    <CheckBox Grid.Column="2" x:Name="bedUnusable"  CheckedChanged="bedUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/> <!-- Bed Bad-->
+                </Grid>
+                
+                
+                <!-- Bed Confirm Condition and Availability-->
+                
+ <!-- ==============================================Bed End=============================================================-->
+                
+<!-- ===============================================Heater Start =======================================================-->
+                <!-- Availability Grid (heater)-->
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="heaterYes" CheckedChanged="heaterYes_CheckedChanged"/>
+                        <!-- Heater (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="heaterNo" CheckedChanged="heaterNo_CheckedChanged"/>
+                        <!-- heater (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+                
+                <!-- Heater Condition -->
+                <Grid Grid.Row="3" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="heaterGood" CheckedChanged="heaterGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/> <!-- Heater Best-->
+                    <CheckBox Grid.Column="1" x:Name="heaterUsable" Grid.Row="0" CheckedChanged="heaterUsable_CheckedChanged" HorizontalOptions="CenterAndExpand"/> <!-- Heater Useable-->
+                    <CheckBox Grid.Column="2" x:Name="heaterUnusable" Grid.Row="0" CheckedChanged="heaterUnusable_CheckedChanged" HorizontalOptions="CenterAndExpand"/> <!-- Heater Bad-->
+                </Grid>
+
+<!-- ==================================================Heater End ===================================================================================-->
+
+<!-- ====================================================Study Light Start ===============================================================================-->
+                <!-- Availability Grid (Study Light)-->
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="lightYes" CheckedChanged="lightYes_CheckedChanged"/>
+                        <!-- Study Light (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="lightNo" CheckedChanged="lightNo_CheckedChanged"/>
+                        <!-- Study Light (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- Study Light Condition -->
+                <Grid Grid.Row="4" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="lightGood" CheckedChanged="lightGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Study Light Best-->
+                    <CheckBox Grid.Column="1" x:Name="lightUsable" CheckedChanged="lightUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Study Light Useable-->
+                    <CheckBox Grid.Column="2" x:Name="lightUnusable" CheckedChanged="lightUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Study Light Bad-->
+                </Grid>
+
+                <!-- ==================================================Study Light End ===================================================================================-->
+
+
+<!-- ===============================================Study Table Start =======================================================-->
+                <!-- Availability Grid (table)-->
+                <Grid Grid.Row="5" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="tableYes" CheckedChanged="tableYes_CheckedChanged"/>
+                        <!-- table (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="tableNo" CheckedChanged="tableNo_CheckedChanged"/>
+                        <!-- table (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- table Condition -->
+                <Grid Grid.Row="5" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="tableGood" Grid.Row="0" CheckedChanged="tableGood_CheckedChanged" HorizontalOptions="CenterAndExpand"/> <!-- table Best-->
+                    <CheckBox Grid.Column="1" x:Name="tableUsable" Grid.Row="0" CheckedChanged="tableUsable_CheckedChanged" HorizontalOptions="CenterAndExpand"/> <!-- table Useable-->
+                    <CheckBox Grid.Column="2" x:Name="tableUnusable" Grid.Row="0" CheckedChanged="tableUnusable_CheckedChanged" HorizontalOptions="CenterAndExpand"/> <!-- table Bad-->
+                </Grid>
+
+<!-- ==================================================Study Table End ===================================================================================-->
+
+<!-- ===============================================bookshelve Start =======================================================-->
+                <!-- Availability Grid (bookshelve)-->
+                <Grid Grid.Row="6" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="bookshelveYes" CheckedChanged="bookshelveYes_CheckedChanged"/>
+                        <!-- bookshelve (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="bookshelveNo" CheckedChanged="bookshelveNo_CheckedChanged"/>
+                        <!-- bookshelve (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- bookshelve Condition -->
+                <Grid Grid.Row="6" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="bookshelveGood" CheckedChanged="bookshelveGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- bookshelve Best-->
+                    <CheckBox Grid.Column="1" x:Name="bookshelveUsable" CheckedChanged="bookshelveUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- bookshelve Useable-->
+                    <CheckBox Grid.Column="2" x:Name="bookshelveUnusable" CheckedChanged="bookshelveUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- bookshelve Bad-->
+                </Grid>
+
+                <!-- ==================================================bookshelve End ===================================================================================-->
+
+<!-- ===============================================wadrobe Start =======================================================-->
+                <!-- Availability Grid (wadrobe)-->
+                <Grid Grid.Row="7" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="wadrobeYes" CheckedChanged="wadrobeYes_CheckedChanged"/>
+                        <!-- wadrobe (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="wadrobeNo"  CheckedChanged="wadrobeNo_CheckedChanged"/>
+                        <!-- wadrobe (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- wadrobe Condition -->
+                <Grid Grid.Row="7" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="wadrobeGood" CheckedChanged="wadrobeGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- wadrobe Best-->
+                    <CheckBox Grid.Column="1" x:Name="wadrobeUsable" CheckedChanged="wadrobeUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- wadrobe Useable-->
+                    <CheckBox Grid.Column="2" x:Name="wadrobeUnusable" CheckedChanged="wadrobeeUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- wadrobe Bad-->
+                </Grid>
+
+<!-- ==================================================wadrobe End ===================================================================================-->
+
+                <!-- ===============================================bin Start =======================================================-->
+                <!-- Availability Grid (bin)-->
+                <Grid Grid.Row="8" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="binYes"  CheckedChanged="binYes_CheckedChanged"/>
+                        <!-- bin (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="binNo"  CheckedChanged="binNo_CheckedChanged"/>
+                        <!-- bin (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- bin Condition -->
+                <Grid Grid.Row="8" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="binGood" CheckedChanged="binGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- bin Best-->
+                    <CheckBox Grid.Column="1" x:Name="binUsable" CheckedChanged="binUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- bin Useable-->
+                    <CheckBox Grid.Column="2" x:Name="binUnusable" CheckedChanged="binUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- bin Bad-->
+                </Grid>
+
+<!-- ==================================================Paper Bin End ===================================================================================-->
+
+<!-- ===============================================Curtains Start =======================================================-->
+                <!-- Availability Grid (Curtains)-->
+                <Grid Grid.Row="9" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="curtainsYes"  CheckedChanged="curtainsYes_CheckedChanged"/>
+                        <!-- Curtains (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="curtainsNo"  CheckedChanged="curtainsNo_CheckedChanged" />
+                        <!-- Curtains (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- Curtains Condition -->
+                <Grid Grid.Row="9" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="curtainsGood" CheckedChanged="curtainsGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Curtains Best-->
+                    <CheckBox Grid.Column="1" x:Name="curtainsUsable" CheckedChanged="curtainsUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Curtains Useable-->
+                    <CheckBox Grid.Column="2" x:Name="curtainsUnusable" CheckedChanged="curtainsUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Curtains Bad-->
+                </Grid>
+
+<!-- ==================================================Curtains End ===================================================================================-->
+
+<!-- ===============================================Chairs Start =======================================================-->
+                <!-- Availability Grid (Chairs)-->
+                <Grid Grid.Row="10" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--Availabolity (Yes or No) -->
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="chairYes"  CheckedChanged="chairYes_CheckedChanged"/>
+                        <!-- Chairs (Yes)-->
+                        <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <CheckBox IsChecked="false" x:Name="chairNo"  CheckedChanged="chairsNo_CheckedChanged"/>
+                        <!-- Chairs (No)-->
+                        <Label Text="No" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- Chairs Condition -->
+                <Grid Grid.Row="10" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Column="0" x:Name="chairGood" CheckedChanged="chairGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Chairs Best-->
+                    <CheckBox Grid.Column="1" x:Name="chairUsable" CheckedChanged="chairUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Chairs Useable-->
+                    <CheckBox Grid.Column="2" x:Name="chairUnusable" CheckedChanged="chairUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                    <!-- Chairs Bad-->
+                </Grid>
+
+<!-- ==================================================Chairs End ===================================================================================-->
+                
+
+                <!-- Outer Grid continued -->
+                <Label Grid.Row="2"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Bed" BackgroundColor="#EEE"/>
+                <Label Grid.Row="3"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Heater" BackgroundColor="#EEE"/>
+                <Label Grid.Row="4"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Study Lamp" BackgroundColor="#EEE"/>
+                <Label Grid.Row="5"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Study Table" BackgroundColor="#EEE"/>
+                <Label Grid.Row="6"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Bookshelf" BackgroundColor="#EEE"/>
+                <Label Grid.Row="7"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Wadrobe" BackgroundColor="#EEE"/>
+                <Label Grid.Row="8"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Paper Bin" BackgroundColor="#EEE"/>
+                <Label Grid.Row="9"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Curtains" BackgroundColor="#EEE"/>
+                <Label Grid.Row="10"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Chair" BackgroundColor="#EEE"/>
+                
+            </Grid>
+            
+            
+                <Entry x:Name="txtComment"
+                   WidthRequest="500"
+                   Placeholder="Comment"
+                   TextColor="Black"
+                   ></Entry>
+
+            <Button Text="Add Room" Clicked="AddRoom" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+
+
+            <StackLayout Orientation="Horizontal" >
+                <Button Text="Inspect Kitchen" Clicked="InspectKitche" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+                <Button Text="Inspect Bathroom" x:Name="btnRedirectToBathRoom"  Clicked="InspectBathroom1" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+            </StackLayout>
+
+
+            <Button Text="Save Inspection" Clicked="SaveInspection" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+            
+                <Label Text=""/>
+                <Label Text="NOTE: Once you submit this inspection, you will not be able to change or edit it again. Please confirm the submission" TextColor="Red"/>
+            <StackLayout >
+            
+            <CheckBox x:Name="ConfirmInspectionCB" IsChecked="False"/>
+                <Label Text="I confirm" TextColor="Maroon"/>
+            </StackLayout >
+            <Button Text="Submit Inspection" Clicked="SubmitInspection" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

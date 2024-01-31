@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Landlord.LHomePage">
+    
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout>
+
+                <Button Text="Home"
+                        Clicked="OnHomeClicked"/>
+                <Button Text="Accept Students"
+                        Clicked="OnAcceptStudentClicked"/>
+                <Button Text="View Student Queries"
+                        Clicked="OnViewStudentQueriesClicked"/>
+                <Button Text="Report to POSA"
+                        Clicked="OnReportToPOSAClicked"/>
+                <Button x:Name="logout" Text="Log Out"
+                        Clicked="OnLogoutClicked"/>
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage Title="Home " />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+            
+</FlyoutPage>
