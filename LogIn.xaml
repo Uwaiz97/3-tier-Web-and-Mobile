@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.LogIn" Title="Log In"
+             BackgroundColor="GhostWhite">
+
+
+    <ContentPage.Content BackgroundColor="Aquamarine">
+        <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="Center">
+            
+            <!-- x:Name backend name -->
+            <Label Text="Log In" FontSize="30"></Label>
+            <!-- UserName -->
+            <Entry x:Name="txtEmail"
+                   WidthRequest="500"
+                   Keyboard="Email"
+                   Placeholder="Email"
+                   TextColor="Black"
+                   PlaceholderColor="DarkGray"
+                   >
+            </Entry>
+
+            <!-- Passowrd -->
+            <Entry x:Name="txtPassword"
+                   Placeholder="Password"
+                   IsPassword="true"
+                   TextColor="Black"
+                   PlaceholderColor="DarkGray">
+            </Entry>
+
+            <!-- Submit button -->
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="false" />
+            <Button x:Name="btnLogin"
+                    VerticalOptions="Center"
+                    Text="Log In"
+                    TextColor="Gray"
+                    TextTransform="Uppercase"
+                    FontAttributes="Bold"
+                    FontSize="17"
+                    BackgroundColor="Transparent"
+                    BorderWidth="1.5"
+                    BorderColor="Gray"
+                    CornerRadius="50"
+                    Clicked="LogIn_Clicked">
+            </Button>
+
+            <!-- Register Option -->
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account? " TextColor="Black"/>
+                        <Span Text="Register"  TextColor="Black" FontAttributes="Bold" TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

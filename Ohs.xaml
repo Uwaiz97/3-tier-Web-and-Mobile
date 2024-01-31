@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Inspector.Ohs">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+            <Label Text="Inspection" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"/>
+            <!-- Add more controls here if needed -->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <ScrollView  Orientation="Vertical">
+
+            <StackLayout Padding="40">
+                <Label Text="OHS Inspection"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="25"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Headers -->
+                    <Label Text="Features" Grid.Row="1" Grid.Column="0" BackgroundColor="LightGray" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="Availability" Grid.Row="0" Grid.Column="1" FontSize="20" FontAttributes="Bold" BackgroundColor="LightGray"/>
+
+                    <!-- Features -->
+                    <Label Text="Evacuation alarm/Fire Horn" Grid.Row="2" Grid.Column="0" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="Smoke detectors" Grid.Row="3" Grid.Column="0" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Fire extinguisher services and date of service" Grid.Row="4" Grid.Column="0" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="First Aid Box" Grid.Row="5" Grid.Column="0" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="Pest control" Grid.Row="6" Grid.Column="0" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Emergency procedures and numbers" Grid.Row="7" Grid.Column="0" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Exit doors can be opened at all times" Grid.Row="8" Grid.Column="0" FontSize="18" FontAttributes="Bold" />
+
+                    <Label Text="Fire Blanket" Grid.Row="9" Grid.Column="0" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="Fire equipment Signage" Grid.Row="10" Grid.Column="0" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="DB Board signage" Grid.Row="11" Grid.Column="0" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Exit routes identified with signage and there are no obstructions" Grid.Row="12" Grid.Column="0" FontSize="18" FontAttributes="Bold" />
+
+                    <!-- Inner grid for Availability -->
+                    <Grid Grid.Row="1" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Headers -->
+                        <Label Text="Yes" Grid.Column="0" FontAttributes="Bold" BackgroundColor="LightGray"/>
+                        <Label Text="No" Grid.Column="1" FontAttributes="Bold" BackgroundColor="LightGray"/>
+                    </Grid>
+
+                    <!-- Fense Checkbox-->
+                    <Grid Grid.Row="2" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox  x:Name="fire_HornYes" IsChecked="False"  CheckedChanged="fire_HornYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1">
+                            <CheckBox  x:Name="fire_HornNo"  IsChecked="False"  CheckedChanged="fire_HornNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                    </Grid>
+
+                    <!-- Gates Checkbox-->
+                    <Grid Grid.Row="3" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox  x:Name="smoke_detectorsYes"  IsChecked="False"  CheckedChanged="smoke_detectorsYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1">
+                            <CheckBox  x:Name="smoke_detectorsNo"  IsChecked="False"  CheckedChanged="smoke_detectorsNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                    </Grid>
+
+                    <!-- Burglar door/Bars Checkbox-->
+                    <Grid Grid.Row="4" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox  x:Name="extinguisherYes"  IsChecked="False"  CheckedChanged="extinguisherYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1">
+                            <CheckBox  x:Name="extinguisherNo"  IsChecked="False"  CheckedChanged="extinguisherNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                    </Grid>
+
+                    <!-- CCTV door/Bars Checkbox-->
+                    <Grid Grid.Row="5" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox   x:Name="firstAidBoxYes"  IsChecked="False"  CheckedChanged="firstAidBoxYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout  Grid.Row="1" Grid.Column="1">
+                            <CheckBox x:Name="firstAidBoxNo"  IsChecked="False"  CheckedChanged="firstAidBoxNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                    </Grid>
+
+                    <!-- Armed Response Checkbox-->
+                    <Grid Grid.Row="6" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0" >
+                            <CheckBox  x:Name="pest_ControlYes"  IsChecked="False" CheckedChanged="pest_ControlYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout  Grid.Row="1" Grid.Column="1">
+                            <CheckBox x:Name="pest_ControlNo"  IsChecked="False"  CheckedChanged="pest_ControlNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                    </Grid>
+
+                    <!-- Panick Buttons Checkbox-->
+                    <Grid Grid.Row="7" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox   x:Name="emergency_ProceduresYes"  IsChecked="False" CheckedChanged="emergency_ProceduresYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+
+                        <StackLayout  Grid.Row="1" Grid.Column="1">
+                            <CheckBox x:Name="emergency_ProceduresNo"  IsChecked="False"  CheckedChanged="emergency_ProceduresNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+                    </Grid>
+
+                    <!-- Room Locks Checkbox-->
+                    <Grid Grid.Row="8" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox x:Name="exit_DoorsYes"  IsChecked="False" CheckedChanged="exit_DoorsYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand">
+                            <CheckBox  x:Name="exit_DoorsNo"  IsChecked="False"  CheckedChanged="exit_DoorsNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+                    </Grid>
+
+
+                    <!-- fireBlanket -->
+                    <Grid Grid.Row="9" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox x:Name="fireBlanketYes"  IsChecked="False" CheckedChanged="fireBlanketYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand">
+                            <CheckBox  x:Name="fireBlanketNo"  IsChecked="False"  CheckedChanged="fireBlanketNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+                    </Grid>
+
+                    <!-- Fire equipment signage -->
+                    <Grid Grid.Row="10" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox x:Name="fireequipmentYes"  IsChecked="False" CheckedChanged="fireequipmentYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand">
+                            <CheckBox  x:Name="fireequipmentNo"  IsChecked="False"  CheckedChanged="fireequipmentNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+                    </Grid>
+
+
+                    <!-- Fire DB Board signage -->
+                    <Grid Grid.Row="11" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox x:Name="DB_BoardYes"  IsChecked="False" CheckedChanged="DB_BoardYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand">
+                            <CheckBox  x:Name="DB_BoardNo"  IsChecked="False"  CheckedChanged="DB_BoardNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+                    </Grid>
+
+                    <!-- Exit routes identified with signage and there are no obstructions -->
+                    <Grid Grid.Row="12" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Checkboxes -->
+                        <StackLayout Grid.Row="1" Grid.Column="0">
+                            <CheckBox x:Name="exitRoutesYes"  IsChecked="False" CheckedChanged="exitRoutesYes_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand">
+                            <CheckBox  x:Name="exitRoutesNo"  IsChecked="False"  CheckedChanged="exitRoutesNo_CheckedChanged"/>
+                            <Label Text=""></Label>
+                        </StackLayout>
+                    </Grid>
+
+                </Grid>
+                <StackLayout Padding="40, 0, 40,40">
+                    <Entry x:Name="ohsComment" Placeholder="Comment"/>
+                </StackLayout >
+
+                <Label Text="NOTE: Once you submit this inspection, you will not be able to change or edit it again. Please confirm the submission" TextColor="Red"/>
+                <StackLayout >
+
+                    <CheckBox x:Name="ConfirmInspectionCB" IsChecked="False"/>
+                    <Label Text="I confirm" TextColor="Maroon"/>
+                </StackLayout >
+                <Button Text="Submit Inspection" Clicked="SubmitInspection" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

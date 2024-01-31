@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Inspector.BathRoom">
+
+    <!-- Header -->
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="Inspection" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"/>
+            <!-- Add more controls here if needed -->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout>
+        <ScrollView VerticalScrollBarVisibility="Always">
+            <StackLayout >
+                <Label Text="Bath Room" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large"/>
+                
+                <Grid HorizontalOptions="Center">
+                    <Label Text="" x:Name="bathRoomNum"  HorizontalOptions="CenterAndExpand"  FontSize="25"/>
+                    <!--Main grid or outer grid-->
+                    <Grid Padding="40" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+
+                        <!-- Outer Grid -->
+                        <Label Grid.Row="0" FontSize="25" FontAttributes="Bold" Grid.Column="0" Text="" BackgroundColor="#EEE"/>
+                        <Label Grid.Row="0" FontSize="25" FontAttributes="Bold" Grid.Column="1" Text="" BackgroundColor="#EEE"/>
+                        <Label Grid.Row="0" FontSize="25" FontAttributes="Bold" Grid.Column="2" Text="Condition" BackgroundColor="#EEE"/>
+                        <Label Grid.Row="0" Grid.Column="3" BackgroundColor="#EEE"/>
+                        <Label Grid.Row="1" FontSize="25" FontAttributes="Bold" Grid.Column="0" Text="Features" BackgroundColor="#EEE"/>
+                        <Label Grid.Row="1" FontSize="25" FontAttributes="Bold" Grid.Column="1" Text="Available?" BackgroundColor="#EEE"/>
+                        <Label Grid.Row="1" FontSize="25" FontAttributes="Bold" Grid.Column="3" Text="Counter" BackgroundColor="#EEE"/>
+
+                        <!-- Condition Grid -->
+                        <Grid Grid.Row="1" Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" FontSize="20" FontAttributes="Bold" Text="Good" BackgroundColor="#EEE"/>
+                            <Label Grid.Column="1" FontSize="20" FontAttributes="Bold" Text="Usable" BackgroundColor="#EEE"/>
+                            <Label Grid.Column="2" FontSize="20" FontAttributes="Bold" Text="Unusable" BackgroundColor="#EEE"/>
+                        </Grid>
+
+                        <!-- Outer Grid continued -->
+
+                        <!-- ==================================================Shower/Bathtab Stove===================================================================-->
+
+                        <!-- Availability Grid (Stove)-->
+                        <Grid Grid.Row="2" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <!--Availabolity (Yes or No) -->
+                            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                                    <CheckBox IsChecked="false" x:Name="showerYes" CheckedChanged="showerYes_CheckedChanged"/>
+                                <!-- Stove (Yes)-->
+                                <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                                    <CheckBox IsChecked="false" x:Name="showerNo" CheckedChanged="showerNo_CheckedChanged"/>
+                                <!-- Stove (No)-->
+                                <Label Text="No" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </Grid>
+
+                        <!-- Stove Condition-->
+                        <Grid Grid.Row="2" Grid.Column="2" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                                <CheckBox Grid.Column="0" x:Name="showerGood"  CheckedChanged="showerGood_CheckedChanged" Grid.Row="0" HorizontalOptions="Center"/>
+                            <!-- Bed Best-->
+                                <CheckBox Grid.Column="1" x:Name="showerUsable"  CheckedChanged="showerUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                            <!--  Bed Usable-->
+                                <CheckBox Grid.Column="2" x:Name="showerUnusable"  CheckedChanged="showerUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                            <!-- Bed Bad-->
+                        </Grid>
+
+                       
+                        <!-- Stove counter-->
+                        <Entry x:Name="txtShowers" Keyboard="Numeric" Placeholder="Number of Showers/Bathtabs" Grid.Row="2" Grid.Column="3"/>
+
+
+                        <!-- ==============================================Stove End=============================================================-->
+
+                            <!-- ===============================================Toilet Start =======================================================-->
+                        <!-- Availability Grid (Fridges)-->
+                        <Grid Grid.Row="3" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <!--Availabolity (Yes or No) -->
+                            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <CheckBox IsChecked="false" x:Name="toiletYes" CheckedChanged="toiletYes_CheckedChanged"/>
+                                <!-- Fridges (Yes)-->
+                                <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <CheckBox IsChecked="false" x:Name="toiletNo" CheckedChanged="toiletNo_CheckedChanged"/>
+                                <!-- Fridges (No)-->
+                                <Label Text="No" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </Grid>
+
+                        <!-- Fridges Condition -->
+                        <Grid Grid.Row="3" Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                                <CheckBox Grid.Column="0" x:Name="toiletGood" CheckedChanged="toiletGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                            <!-- Fridges Best-->
+                                <CheckBox Grid.Column="1" x:Name="toiletUsable" Grid.Row="0" CheckedChanged="toiletUsable_CheckedChanged" HorizontalOptions="CenterAndExpand"/>
+                            <!-- Fridges Useable-->
+                                <CheckBox Grid.Column="2" x:Name="toiletUnusable" Grid.Row="0" CheckedChanged="toiletUnusable_CheckedChanged" HorizontalOptions="CenterAndExpand"/>
+                            <!-- Fridges Bad-->
+                        </Grid>
+
+                            <Entry x:Name="txtToilet" Keyboard="Numeric" Placeholder="No. of toilets ###" Grid.Row="3" Grid.Column="3"/>
+                        <!-- ==================================================fridge End ===================================================================================-->
+
+                            <!-- ====================================================Basin Start ===============================================================================-->
+                        <!-- Availability Grid (Microwaves)-->
+                        <Grid Grid.Row="4" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <!--Availabolity (Yes or No) -->
+                            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <CheckBox IsChecked="false" x:Name="basinYes" CheckedChanged="basinYes_CheckedChanged"/>
+                                <!-- Microwaves (Yes)-->
+                                <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <CheckBox IsChecked="false" x:Name="basinNo" CheckedChanged="basinNo_CheckedChanged"/>
+                                <!-- Study Light (No)-->
+                                <Label Text="No" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </Grid>
+
+                        <!-- Study Light Condition -->
+                        <Grid Grid.Row="4" Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                                <CheckBox Grid.Column="0" x:Name="basinGood" CheckedChanged="basinGood_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                            <!-- Study Light Best-->
+                                <CheckBox Grid.Column="1" x:Name="basinUsable" CheckedChanged="basinUsable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                            <!-- Study Light Useable-->
+                                <CheckBox Grid.Column="2" x:Name="basinUnusable" CheckedChanged="basinUnusable_CheckedChanged" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                            <!-- Study Light Bad-->
+                        </Grid>
+                            <Entry x:Name="txtBasin" Keyboard="Numeric" Placeholder="No. of basin" Grid.Row="4" Grid.Column="3"/>
+                        <!-- ==================================================Microwave End ===================================================================================-->
+
+
+                            <!-- ===============================================She Bin Start =======================================================-->
+                        <!-- Availability Grid (table)-->
+                        <Grid Grid.Row="5" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <!--Availabolity (Yes or No) -->
+                            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <CheckBox IsChecked="false" x:Name="she_BinYes" CheckedChanged="she_BinYes_CheckedChanged"/>
+                                <!-- table (Yes)-->
+                                <Label Text="Yes" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <CheckBox IsChecked="false" x:Name="she_BinNo" CheckedChanged="she_BinNo_CheckedChanged"/>
+                                <!-- table (No)-->
+                                <Label Text="No" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </Grid>
+
+                        <!-- table Condition -->
+                        <Grid Grid.Row="5" Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                                <CheckBox Grid.Column="0" x:Name="she_BinGood" Grid.Row="0" CheckedChanged="she_BinGood_CheckedChanged" HorizontalOptions="CenterAndExpand"/>
+                            <!-- table Best-->
+                                <CheckBox Grid.Column="1" x:Name="she_BinUsable" Grid.Row="0" CheckedChanged="she_BinUsable_CheckedChanged" HorizontalOptions="CenterAndExpand"/>
+                            <!-- table Useable-->
+                                <CheckBox Grid.Column="2" x:Name="she_BinUnusable" Grid.Row="0" CheckedChanged="she_BinUnusable_CheckedChanged" HorizontalOptions="CenterAndExpand"/>
+                            <!-- table Bad-->
+                        </Grid>
+
+                            <Entry x:Name="txtshe_Bin" Keyboard="Numeric" Placeholder="No. of She Bin" Grid.Row="5" Grid.Column="3"/>
+
+                        <!-- ==================================================Study Table End ===================================================================================-->
+
+                        <!-- Outer Grid continued -->
+                            <Label Grid.Row="2"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Showers/Bathtubs" BackgroundColor="#EEE"/>
+                            <Label Grid.Row="3"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Toilet" BackgroundColor="#EEE"/>
+                            <Label Grid.Row="4"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="Basin" BackgroundColor="#EEE"/>
+                            <Label Grid.Row="5"  FontSize="18" FontAttributes="Bold" Grid.Column="0" Text="She Bin" BackgroundColor="#EEE"/>
+                        </Grid>
+                </Grid>
+                <Entry x:Name="txtComment"
+                   WidthRequest="500"
+                   Placeholder="Comment"
+                   TextColor="Black"
+                   ></Entry>
+        
+
+                    <Button Text="Add Bathroom" Clicked="Add_BathRoom" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+
+
+                    <StackLayout Orientation="Horizontal" >
+                        <Button Text="Inspect Kitchen" Clicked="InspectKitchen" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+                        <Button Text="Inspect Bedroom" x:Name="btnRedirectToBathRoom"  Clicked="InspectBedroom" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+                    </StackLayout>
+
+
+                    <Button Text="Save Inspection" Clicked="SaveInspection" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+
+                    <Label Text=""/>
+                <Label Text=""/>
+                <Label Text="NOTE: Once you submit this inspection, you will not be able to change or edit it again. Please confirm the submission" TextColor="Red"/>
+                <CheckBox x:Name="ConfirmInspectionCB" IsChecked="False"/>
+                <Label Text="I confirm" TextColor="Maroon"/>
+                    <Button Text="Submit Inspection" Clicked="SubmitInspection" WidthRequest="200" HeightRequest="50" HorizontalOptions="CenterAndExpand" ></Button>
+                </StackLayout>
+        </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
